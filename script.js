@@ -1,13 +1,13 @@
 const GetDataFromAPI = async () => {
     try {
-        const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+        const res = await fetch("https://jsonplaceholder.typicode.com/todo/1");
 
         if (!res.ok) {
             throw new Error(`${res.status} Something went wrong! `);
         }
         const data = await res.json();
-        console.log(data);
-        RenderTasks(data);
+        // console.log(data);
+        RenderPockemon(data);
     } catch (error) {
         console.log("I am a handmade error!");
     }
@@ -18,7 +18,7 @@ const RenderTasks = (tasks) => {
 };
 
 const toDoList = document.getElementById("todo-list");
-function RenderTask(task) {
+function RenderPockemon(task) {
     let liClass = `bg-white-200`;
     if (task.completed) {
         liClass = `bg-green-500 `;
